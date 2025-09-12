@@ -1,0 +1,60 @@
+package com.bstackdemo;
+
+import org.testng.annotations.Test;
+
+import com.reusablePages.Loginpage;
+
+import utility.Webdriver;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+
+public class Logintest {
+  WebDriver driver;
+  com.reusablePages.Loginpage l;
+  Webdriver w;
+  
+
+  @BeforeTest
+  public void setup() {
+      w = new Webdriver();
+      driver = w.launchbrowser("https://bstackdemo.com/");
+      l = new Loginpage(driver);
+  }
+@Test(priority = 3)
+  public void valid() throws InterruptedException {
+	  Thread.sleep(5000);
+	  String message =  l.logincred("demouser", "testingisfun99");
+	  System.out.println(message);
+	 String actualTitle = driver.getTitle();
+	    Assert.assertTrue(actualTitle.contains("StackDemo"), "Login failed!");
+	    l.logout();
+  }
+	 
+  @Test(priority = 1)
+  public void invalid() throws InterruptedException {
+	  String message =  l.logincred("demousr", "testingisfun99");
+	  System.out.println(message);
+	 String actualTitle = driver.getTitle();
+	    Assert.assertTrue(actualTitle.contains("StackDemo"), "Login failed!");
+	    driver.navigate().refresh();
+  }
+  
+  @Test(priority =2)
+  public void empty() throws InterruptedException {
+	  String message =  l.logincred("", "demouser");
+	  System.out.println(message);
+	 String actualTitle = driver.getTitle();
+	    Assert.assertTrue(actualTitle.contains("StackDemo"), "Login failed!");
+	    driver.navigate().refresh();
+  }
+
+  @AfterMethod
+  public void afterTest() {
+	  driver.close();
+  }
+
+}

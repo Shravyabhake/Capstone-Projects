@@ -1,0 +1,96 @@
+package ReusablePages;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class Loginpage {
+    WebDriver driver;
+
+    // 🔹 Left menu
+    @FindBy(xpath = "//ul[@class='oxd-main-menu']/li")
+    List<WebElement> menuOptions;
+
+    @FindBy(xpath = "//span[text()='Admin']")
+    WebElement adminMenu;
+
+    // 🔹 Search form elements
+    @FindBy(xpath = "//label[text()='Username']/../following-sibling::div/input")
+    WebElement userNameField;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    WebElement searchBtn;
+
+   @FindBy(xpath = "//div[@role='rowgroup']/div")
+    //@FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[2]/div[2]/div/span")
+   // @FindBy(xpath = "//div[@role='rowgroup']/div[@role='row']")
+    List<WebElement> records;
+
+    // 🔹 User Role dropdown
+    @FindBy(xpath = "//label[text()='User Role']/../following-sibling::div//div[contains(@class,'oxd-select-text-input')]")
+    WebElement userRoleDropdown;
+
+   //  @FindBy(xpath = "//span[text()='Admin']")
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div[2]/div[2]")
+    WebElement userRoleAdmin;
+
+    // 🔹 User Status dropdown
+    @FindBy(xpath = "//label[text()='Status']/../following-sibling::div//div[contains(@class,'oxd-select-text-input')]")
+    WebElement userStatusDropdown;
+
+    @FindBy(xpath = "//span[text()='Enabled']")
+    WebElement userStatusEnabled;
+
+    @FindBy(xpath = "//span[text()='Disabled']")
+    WebElement userStatusDisabled;
+
+    // 🔹 Constructor
+    public Loginpage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);  // initialize all @FindBy elements
+    }
+
+    // 🔹 Actions
+    public int getLeftMenuOptions() {
+        for (WebElement opt : menuOptions) {
+            System.out.println(opt.getText());
+        }
+        return menuOptions.size();
+    }
+
+    public void clickAdminMenu() {
+        adminMenu.click();
+    }
+
+    public void searchByUserName(String uname) {
+        userNameField.sendKeys(uname);
+        searchBtn.click();
+    }
+
+    public void selectUserRoleAdmin() {
+        userRoleDropdown.click();
+        userRoleAdmin.click();
+        searchBtn.click();
+    }
+
+    public void selectUserStatus(String status) {
+        userStatusDropdown.click();
+        if (status.equalsIgnoreCase("Enabled")) {
+            userStatusEnabled.click();
+        } else {
+            userStatusDisabled.click();
+        }
+        searchBtn.click();
+    }
+
+    public int getSearchResults() {
+        return records.size();
+    }
+
+    public void refreshPage() {
+        driver.navigate().refresh();
+    }
+}

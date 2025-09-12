@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OrangeHRM Suite">
+
+  <!-- Attach Extent Report Listener -->
+  <listeners>
+    <listener class-name="utility.ExtentreportListener"/>
+  </listeners>
+
+  <test name="Admin Test Execution" thread-count="5">
+    <classes>
+      <class name="com.orangehrm.AdmintestExecution2"/>
+    </classes>
+  </test>
+
+</suite>

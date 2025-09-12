@@ -1,0 +1,69 @@
+package com.bstackdemo;
+
+import org.testng.annotations.Test;
+
+import com.reusablePages.Loginpage;
+
+import utility.Webdriver;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+public class Logintest {
+  WebDriver driver;
+  com.reusablePages.Loginpage l;
+  Webdriver w;
+ /* @AfterMethod
+  public void resetState() {
+      driver.navigate().to("https://bstackdemo.com/");
+  }*/
+
+  @BeforeTest
+  public void setup() {
+      w = new Webdriver();
+      driver = w.launchbrowser("https://bstackdemo.com/");
+      l = new Loginpage(driver);
+  }
+  @Test(priority = 1)
+  public void valid() throws InterruptedException {
+	  String message =  l.logincred("demouser", "testingisfun99");
+	  System.out.println(message);
+	 //String actualTitle = driver.getTitle();
+	   // Assert.assertTrue(actualTitle.contains("true"), "Login failed!");
+	  Assert.assertTrue(l.isLogoutVisible(), "Login failed!");
+
+	    l.logout();
+	      driver.navigate().to("https://bstackdemo.com/");
+
+  }
+  @Test(priority =2)
+  public void empty() throws InterruptedException {
+	  String message =  l.logincred("demouser", " ");
+	  System.out.println(message);
+	 //String actualTitle = driver.getTitle();
+	    Assert.assertTrue(l.isInvalidMsgVisible(), "Expected error message not displayed for empty password.");
+	      driver.navigate().to("https://bstackdemo.com/");
+
+
+  }
+	
+  @Test(priority = 3)
+  public void invalid() throws InterruptedException {
+	  String message =  l.logincred("image_not_loading_user", "hello");
+	  System.out.println(message);
+	 //String actualTitle = driver.getTitle();
+	    Assert.assertTrue(l.isInvalidMsgVisible(), "Expected error message not displayed for invalid login.");
+	      driver.navigate().to("https://bstackdemo.com/");
+
+
+
+  }
+ 
+ @AfterTest
+  public void afterTest() {
+	  driver.quit();
+  }
+
+}

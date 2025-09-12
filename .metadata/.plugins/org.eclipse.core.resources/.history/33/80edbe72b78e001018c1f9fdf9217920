@@ -1,0 +1,15 @@
+package com.orangehrm;
+
+
+import org.openqa.selenium.WebDriver;
+
+public class Dummydriver {
+
+	WebDriver driver ;
+	public static void launch() {
+		
+		
+	}
+	
+	
+}

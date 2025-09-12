@@ -1,0 +1,71 @@
+package com.orangehrm; 
+import java.util.List; 
+import org.openqa.selenium.WebDriver; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.support.FindBy; 
+import org.openqa.selenium.support.PageFactory; 
+public class Adminpage{ 
+private WebDriver driver; 
+
+
+public Adminpage(WebDriver d) { 
+this.driver = d; 
+PageFactory.initElements(driver, this); 
+} 
+
+@FindBy(xpath = "//ul[@class=\"oxd-main-menu\"]/li/a") 
+private List<WebElement> menuitems;
+
+@FindBy(linkText = "Admin")  WebElement adminlink; 
+
+@FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]/input") 
+private WebElement username; 
+
+@FindBy(xpath = "//button[@type=\"submit\"]") 
+private WebElement searchbutton; 
+
+@FindBy(xpath = "//span[contains(normalize-space(.), 'Records Found')]")WebElement recordsfound; 
+
+@FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[2]/div/div[2]/div/div/div[2]/i") 
+WebElement dropdown; 
+
+@FindBy(xpath="(//div[text()=\"Admin\"])[1]")WebElement userroleadmin;
+
+@FindBy(xpath="//div[text()=\"-- Select --\"]")WebElement selectstatus;
+
+@FindBy(xpath="(//div[text()=\"Enabled\"])[1]")WebElement enabled;
+
+@FindBy(xpath="//button[contains(normalize-space(.), 'Reset')]") WebElement Reset;
+
+public void admin() {
+		for(WebElement m : menuitems) {
+			System.out.println("Total no of menus "+m.getSize());
+			}
+		adminlink.click();
+		
+	}
+
+public void Searchbyusername(String un) {
+	username.sendKeys(un);
+	searchbutton.click();
+	System.out.println("Total records for search by username "+recordsfound.getSize());
+	Reset.click();
+}
+
+public void searchbyrole() {
+	dropdown.click();
+	userroleadmin.click();
+	System.out.println("Total recpords for user role "+recordsfound.getSize());
+	Reset.click();
+
+}
+
+public void userstatus() {
+	selectstatus.click();
+	enabled.click();
+	System.out.println("Total records by status "+recordsfound.getSize());
+	Reset.click();
+
+}
+}
+

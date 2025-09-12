@@ -1,0 +1,14 @@
+package com.orangehrm;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class Dummydriver {
+    WebDriver driver;   // ✅ correct
+
+    public void openSite() {
+        driver = new EdgeDriver();
+        driver.get("https:/google.com");  // suggestions should appear
+        
+    }
+}
