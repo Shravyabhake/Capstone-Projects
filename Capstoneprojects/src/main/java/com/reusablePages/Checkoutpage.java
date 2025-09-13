@@ -42,7 +42,7 @@ public class Checkoutpage {
 		Screenshot.getScreenshot(driver);
 
 		wait.waitForClickable(submit).click();
-	//	Screenshot.getScreenshot(driver);
+		Screenshot.getScreenshot(driver);
 
 		Thread.sleep(5000);
 		Screenshot.getScreenshot(driver);

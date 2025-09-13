@@ -1,13 +1,9 @@
 package com.reusablePages;
-
-
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import utility.Screenshot;
 import utility.Waits;
 
@@ -48,30 +44,21 @@ public class Cartpage {
 
 	    add3.click();
 		Screenshot.getScreenshot(driver);
-
-
-
-	    
-	}
+}
 	public void closeCart() {
 	    wait.waitForClickable(close).click();
 	}
-
 
 	public void remove() throws InterruptedException {
 		wait.waitForClickable(remove).click();
 		Thread.sleep(3000);
 		Screenshot.getScreenshot(driver);
 
-
 	}
 	public int getCartCount() {
 	    int count = countcart.size();
 		Screenshot.getScreenshot(driver);
-
-
-	    return count;
-	}
+		return count;	}
 
 	 public void logout() {
 	        wait.waitForClickable(logoutBtn).click();

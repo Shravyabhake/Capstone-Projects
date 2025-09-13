@@ -17,15 +17,10 @@ public class Logintest {
   com.reusablePages.Loginpage l;
   Webdriver w;
   
- /* @AfterMethod
-  public void resetState() {
-      driver.navigate().to("https://bstackdemo.com/");
-  }*/
   @BeforeMethod
   public void resetAppState() {
       driver.navigate().to("https://bstackdemo.com/");
   }
-
   @BeforeTest
   public void setup() {
       w = new Webdriver();
@@ -42,9 +37,7 @@ public class Logintest {
 	  
 
 	    l.logout();
-
-  }
-  
+ } 
   @Test(priority = 2)
   public void invalid() throws InterruptedException {
 	  
@@ -54,8 +47,6 @@ public class Logintest {
 	    Assert.assertTrue(l.isInvalidMsgVisible(), "Expected error message not displayed for invalid login.");
 	      driver.navigate().refresh();
 
-
-
   }
   @Test(priority = 3)
   public void empty() throws InterruptedException {
@@ -64,12 +55,8 @@ public class Logintest {
 	 //String actualTitle = driver.getTitle();
 	    Assert.assertTrue(l.isInvalidMsgVisible(), "Expected error message not displayed for empty password.");
 	      driver.navigate().refresh();
-
-
   }
-	
- 
- @AfterTest
+@AfterTest
   public void afterTest() throws InterruptedException {
 	 Thread.sleep(5000);
 	  driver.quit();

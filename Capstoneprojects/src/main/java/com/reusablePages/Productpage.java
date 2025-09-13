@@ -19,15 +19,14 @@ public class Productpage {
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
         wait = new Waits(driver, 10);
-
-	}
+}
 	public void product(String item) throws InterruptedException {
 		search.sendKeys(item);
 		Thread.sleep(3000);
 		Screenshot.getScreenshot(driver);
 
 		searchicon.click();
-		Screenshot.getScreenshot(driver);
+	    Screenshot.getScreenshot(driver);
 
 		String fullText = driver.findElement(By.xpath("//small[@class='products-found']")).getText();
 		System.out.println("Products info: " + fullText);

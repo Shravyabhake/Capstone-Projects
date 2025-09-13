@@ -1,53 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-12T13:33:01 IST" name="TelecomProjectSuite" finished-at="2025-09-12T13:33:21 IST" duration-ms="20715">
+  <suite started-at="2025-09-13T09:40:51 IST" name="Bstackdemo_Suite" finished-at="2025-09-13T09:41:58 IST" duration-ms="67202">
     <groups>
     </groups>
-    <test started-at="2025-09-12T13:33:01 IST" name="Tests_RestApi" finished-at="2025-09-12T13:33:21 IST" duration-ms="20715">
-      <class name="com.RestapiProject.TelecomP">
-        <test-method signature="addNewUser()[pri:1, instance:com.RestapiProject.TelecomP@49139829]" started-at="2025-09-12T13:33:01 IST" name="addNewUser" finished-at="2025-09-12T13:33:05 IST" duration-ms="4227" status="PASS">
+    <test started-at="2025-09-13T09:40:51 IST" name="Tests_Bstackdemo" finished-at="2025-09-13T09:41:58 IST" duration-ms="67202">
+      <class name="com.bstackdemo.Logintest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.bstackdemo.Logintest@7b98f307]" started-at="2025-09-13T09:41:02 IST" name="setup" finished-at="2025-09-13T09:41:07 IST" duration-ms="4612" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addNewUser -->
-        <test-method signature="getUserProfile()[pri:2, instance:com.RestapiProject.TelecomP@49139829]" started-at="2025-09-12T13:33:05 IST" name="getUserProfile" finished-at="2025-09-12T13:33:07 IST" duration-ms="1671" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="resetAppState()[pri:0, instance:com.bstackdemo.Logintest@7b98f307]" started-at="2025-09-13T09:41:07 IST" name="resetAppState" finished-at="2025-09-13T09:41:08 IST" duration-ms="723" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getUserProfile -->
-        <test-method signature="updateUser()[pri:3, instance:com.RestapiProject.TelecomP@49139829]" started-at="2025-09-12T13:33:07 IST" name="updateUser" finished-at="2025-09-12T13:33:09 IST" duration-ms="1835" status="PASS">
+        </test-method> <!-- resetAppState -->
+        <test-method signature="valid()[pri:1, instance:com.bstackdemo.Logintest@7b98f307]" started-at="2025-09-13T09:41:08 IST" name="valid" finished-at="2025-09-13T09:41:13 IST" duration-ms="5478" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateUser -->
-        <test-method signature="loginUser()[pri:4, instance:com.RestapiProject.TelecomP@49139829]" started-at="2025-09-12T13:33:09 IST" name="loginUser" finished-at="2025-09-12T13:33:11 IST" duration-ms="2161" status="PASS">
+        </test-method> <!-- valid -->
+        <test-method is-config="true" signature="resetAppState()[pri:0, instance:com.bstackdemo.Logintest@7b98f307]" started-at="2025-09-13T09:41:13 IST" name="resetAppState" finished-at="2025-09-13T09:41:15 IST" duration-ms="1459" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginUser -->
-        <test-method signature="addContact()[pri:5, instance:com.RestapiProject.TelecomP@49139829]" started-at="2025-09-12T13:33:11 IST" name="addContact" finished-at="2025-09-12T13:33:13 IST" duration-ms="1765" status="PASS">
+        </test-method> <!-- resetAppState -->
+        <test-method signature="invalid()[pri:2, instance:com.bstackdemo.Logintest@7b98f307]" started-at="2025-09-13T09:41:15 IST" name="invalid" finished-at="2025-09-13T09:41:20 IST" duration-ms="4984" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addContact -->
-        <test-method signature="getContactList()[pri:6, instance:com.RestapiProject.TelecomP@49139829]" started-at="2025-09-12T13:33:13 IST" name="getContactList" finished-at="2025-09-12T13:33:14 IST" duration-ms="1719" status="PASS">
+        </test-method> <!-- invalid -->
+        <test-method is-config="true" signature="resetAppState()[pri:0, instance:com.bstackdemo.Logintest@7b98f307]" started-at="2025-09-13T09:41:20 IST" name="resetAppState" finished-at="2025-09-13T09:41:20 IST" duration-ms="663" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getContactList -->
-        <test-method signature="getContact()[pri:7, instance:com.RestapiProject.TelecomP@49139829]" started-at="2025-09-12T13:33:14 IST" name="getContact" finished-at="2025-09-12T13:33:16 IST" duration-ms="1849" status="PASS">
+        </test-method> <!-- resetAppState -->
+        <test-method signature="empty()[pri:3, instance:com.bstackdemo.Logintest@7b98f307]" started-at="2025-09-13T09:41:20 IST" name="empty" finished-at="2025-09-13T09:41:26 IST" duration-ms="5244" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getContact -->
-        <test-method signature="updateContact()[pri:8, instance:com.RestapiProject.TelecomP@49139829]" started-at="2025-09-12T13:33:16 IST" name="updateContact" finished-at="2025-09-12T13:33:18 IST" duration-ms="2070" status="PASS">
+        </test-method> <!-- empty -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.bstackdemo.Logintest@7b98f307]" started-at="2025-09-13T09:41:52 IST" name="afterTest" finished-at="2025-09-13T09:41:58 IST" duration-ms="5637" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateContact -->
-        <test-method signature="updateContactPartial()[pri:9, instance:com.RestapiProject.TelecomP@49139829]" started-at="2025-09-12T13:33:18 IST" name="updateContactPartial" finished-at="2025-09-12T13:33:20 IST" duration-ms="1571" status="PASS">
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.bstackdemo.Logintest -->
+      <class name="com.bstackdemo.Carttest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.bstackdemo.Carttest@3e694b3f]" started-at="2025-09-13T09:40:51 IST" name="setup" finished-at="2025-09-13T09:40:57 IST" duration-ms="6325" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateContactPartial -->
-        <test-method signature="logoutUser()[pri:10, instance:com.RestapiProject.TelecomP@49139829]" started-at="2025-09-12T13:33:20 IST" name="logoutUser" finished-at="2025-09-12T13:33:21 IST" duration-ms="1532" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="login()[pri:1, instance:com.bstackdemo.Carttest@3e694b3f]" started-at="2025-09-13T09:41:26 IST" name="login" finished-at="2025-09-13T09:41:31 IST" duration-ms="5032" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- logoutUser -->
-      </class> <!-- com.RestapiProject.TelecomP -->
-    </test> <!-- Tests_RestApi -->
-  </suite> <!-- TelecomProjectSuite -->
+        </test-method> <!-- login -->
+        <test-method signature="addingMul()[pri:2, instance:com.bstackdemo.Carttest@3e694b3f]" started-at="2025-09-13T09:41:31 IST" name="addingMul" finished-at="2025-09-13T09:41:31 IST" duration-ms="853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addingMul -->
+        <test-method signature="remove()[pri:3, instance:com.bstackdemo.Carttest@3e694b3f]" started-at="2025-09-13T09:41:31 IST" name="remove" finished-at="2025-09-13T09:41:35 IST" duration-ms="3773" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- remove -->
+        <test-method signature="verifyCartCount()[pri:4, instance:com.bstackdemo.Carttest@3e694b3f]" started-at="2025-09-13T09:41:35 IST" name="verifyCartCount" finished-at="2025-09-13T09:41:35 IST" duration-ms="38" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCartCount -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.bstackdemo.Carttest@3e694b3f]" started-at="2025-09-13T09:41:52 IST" name="afterTest" finished-at="2025-09-13T09:41:52 IST" duration-ms="169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.bstackdemo.Carttest -->
+      <class name="com.bstackdemo.Checkouttest">
+        <test-method is-config="true" signature="launch()[pri:0, instance:com.bstackdemo.Checkouttest@1bb5a082]" started-at="2025-09-13T09:40:57 IST" name="launch" finished-at="2025-09-13T09:41:02 IST" duration-ms="5085" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method signature="login()[pri:1, instance:com.bstackdemo.Checkouttest@1bb5a082]" started-at="2025-09-13T09:41:35 IST" name="login" finished-at="2025-09-13T09:41:40 IST" duration-ms="5135" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="productsearch()[pri:2, instance:com.bstackdemo.Checkouttest@1bb5a082]" started-at="2025-09-13T09:41:40 IST" name="productsearch" finished-at="2025-09-13T09:41:45 IST" duration-ms="4174" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productsearch -->
+        <test-method signature="addtocart()[pri:3, instance:com.bstackdemo.Checkouttest@1bb5a082]" started-at="2025-09-13T09:41:45 IST" name="addtocart" finished-at="2025-09-13T09:41:45 IST" duration-ms="866" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addtocart -->
+        <test-method signature="checkout()[pri:4, instance:com.bstackdemo.Checkouttest@1bb5a082]" started-at="2025-09-13T09:41:45 IST" name="checkout" finished-at="2025-09-13T09:41:52 IST" duration-ms="6690" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkout -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.bstackdemo.Checkouttest@1bb5a082]" started-at="2025-09-13T09:41:52 IST" name="afterTest" finished-at="2025-09-13T09:41:52 IST" duration-ms="151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.bstackdemo.Checkouttest -->
+    </test> <!-- Tests_Bstackdemo -->
+  </suite> <!-- Bstackdemo_Suite -->
 </testng-results>

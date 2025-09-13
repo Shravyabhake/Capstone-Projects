@@ -9,7 +9,8 @@
 
   <test name="Admin Test Execution" thread-count="5">
     <classes>
-      <class name="com.orangehrm.Admintextexectn2"/>
+      <class name="com.orangehrm.LoginorhmTest"/>
+	   <class name="com.orangehrm.Admintextexectn2"/>
     </classes>
   </test>
 

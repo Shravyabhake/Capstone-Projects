@@ -1,12 +1,9 @@
 package com.bstackdemo;
 
 import org.testng.annotations.Test;
-
 import com.reusablePages.Cartpage;
 import com.reusablePages.Loginpage;
-
 import utility.Webdriver;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -44,9 +41,7 @@ public void addingMul() throws InterruptedException {
 	    System.out.println("Cart count  " + total);
 	    Assert.assertEquals(total, 3, "Cart count before removing should be 3");
 
-	   
-}
-
+	   }
 
 @Test(priority = 3)
 public void remove() throws InterruptedException {
@@ -59,7 +54,6 @@ public void verifyCartCount() {
 	    System.out.println("Cart count after removing: " + totalAfter);
 	    Assert.assertEquals(totalAfter, 2, "Cart count after removing should be 2");
 	}
-
 
 @AfterTest
 public void afterTest() {
